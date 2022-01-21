@@ -14,7 +14,7 @@ library(enrichplot)
 # packageVersion("Rsubread")
 
 # import featurecounts table:
-fC_out <- read.delim("~/Desktop/fC_out", comment.char="#", row.names = "Geneid")
+fC_out <- read.delim("~/Desktop/rnaseq/featureCounts_out/fC_out", comment.char="#", row.names = "Geneid")
 
 #clean up column names
 colnames(fC_out)
