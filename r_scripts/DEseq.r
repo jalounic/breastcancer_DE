@@ -80,8 +80,6 @@ getDEGenes <- function(deseq2results){
   return(DEgenes)
 }
 
-# look for specific genes: 
-# DEgenes$log2FoldChange[DEgenes$geneid == "ENSG00000128422"]
 
 NormvsTNBC <- getDEGenes(results(dds, contrast=c("condition","Normal", "TNBC")))
 
@@ -137,15 +135,9 @@ barplot(ego, showCategory=10)
 dotplot(ego, showCategory=10)
 
 ## convert gene ID to Symbol
-p1 <- cnetplot(ego, showCategory = 5, node_label="category", 
-               cex_label_category = 1.2) 
+p1 <- cnetplot(ego, node_label="category", 
+               cex_label_category = 0.8) 
 p2 <- cnetplot(ego, node_label="gene", 
                cex_label_gene = 0.8) 
-p3 <- cnetplot(ego, node_label="all") 
-p4 <- cnetplot(ego, node_label="none", 
-               color_category='firebrick', 
-               color_gene='steelblue') 
 p1
 p2
-p3
-p4
